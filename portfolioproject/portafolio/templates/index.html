@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{% static 'principal/estilo.css' %}">
+</head>
+<body>  
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="{% static 'principal\img\xbox.png' %}" alt="Logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">  
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#inicio">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sobremi">Sobre Mí</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#skills">Habilidades</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#portfolio">Portafolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contacto">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <!-- SECCION INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div class="contenedor-img">
+                <img src="{% static 'principal/img/Icono perfil.png' %}" alt="">
+            </div>
+            <h1>Jossue Padron</h1>
+            <h2>Ingeniero en Informatica</h2>
+            <div class="redes">
+                <a href="https://www.instagram.com/jossue4pc/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="discordapp.com/users/472891145974972447"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.linkedin.com/in/jossue4pc/"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi" class="sobremi">
+        <div class="contenido-seccion">
+            <h2>Sobre Mí</h2>
+            <p><span>Hola, soy Jossue Padron.</span> un joven de 20 años estudiante de Ingeniería en Informática y Analista Técnico en Bicom. Me apasionan los videojuegos, las películas de ciencia ficción, la música y el anime. Disfruto explorando nuevas tecnologías y enfrentando desafíos que me permitan crecer profesionalmente en el campo de la informática.</p>
+
+            <div class="fila">
+                <!-- datos personales -->
+                <div class="col">
+                    <h3>Datos Personales</h3>
+                    <ul>
+                        <li>
+                            <strong>Cumpleaños</strong>
+                            08-10-2003
+                        </li>
+                        <li>
+                            <strong>Teléfono</strong>
+                            9 22299964
+                        </li>
+                        <li>
+                            <strong>Email</strong>
+                            Jossue4pc@gmail.com
+                        </li>
+                        <li>
+                            <strong>Website</strong>
+                            www.example.com
+                        </li>
+                        <li>
+                            <strong>Dirección</strong>
+                            Puerto Montt
+                        </li>
+                        <li>
+                            <strong>Cargo</strong>
+                            <span>Analista Tecnico</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- intereses -->
+                <div class="col">
+                    <h3>Intereses</h3>
+                    <div class="contenedor-intereses">
+                        <div class="interes">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <span>JUEGOS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-headphones"></i>
+                            <span>MUSICA</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-d-and-d"></i>
+                            <span>Anime</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-brands fa-rebel"></i>
+                            <span>Peliculas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCV">
+                Descargar CV
+              </button>
+            
+              <!-- Modal -->
+              <div class="modal fade" id="modalCV" tabindex="-1" aria-labelledby="modalCVLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalCVLabel">Mi Currículum</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <object data="{% static 'principal/archivos/Currículum Agente comercial Profesional Blanco y negro.pdf' %}" type="application/pdf" width="100%" height="500px">
+                        <p>Tu navegador no admite la visualización de archivos PDF. Por favor, descarga el archivo para verlo: <a href="{% static 'archivos/Currículum Agente comercial Profesional Blanco y negro.pdf' %}" download>Descargar CV</a></p>
+                      </object>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <a href="{% static 'principal/archivos/Currículum Agente comercial Profesional Blanco y negro.pdf' %}" download class="btn btn-primary">Descargar</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </section>
+
+    <!-- SECCION HABILIDADES -->
+    <section class="skills" id="skills">
+        <div class="contenido-seccion">
+            <h2>Habilidades</h2>
+            <div class="fila">
+                <!-- Technical Skill -->
+                <div class="col">
+                    <h3>Habilidades Tecnicas</h3>
+                    <div class="skill">
+                        <span>Javascript</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>HTML</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>89%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Python</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>95%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>CSS</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>81%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Excel</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>55%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Habilidades Profesionales -->
+                <div class="col">
+                    <h3>Habilidades Profesionales</h3>
+                    <div class="skill">
+                        <span>Comunicación</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Trabajo en Equipo</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>70%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Creatividad</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>99%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Dedicación</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>65%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Manejo de trabajos</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>94%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION CURRICULUM -->
+    <section id="curriculum" class="curriculum">
+        <div class="contenido-seccion">
+            <h2>Curriculum</h2>
+            <div class="fila">
+                <div class="col izquierda">
+                    <h3>Educación</h3>
+                    <div class="item izq">
+                        <h4>Inicial hasta Secundaria</h4>
+                        <span class="casa">Colegio Ntra. Sra. del Carmen</span>
+                        <span class="fecha">2008 - 2020</span>
+                        <p></p>
+                        <div class="conectori">
+                            <div class="circuloi"></div>
+                        </div>
+                    </div>
+                    <div class="item izq">
+                        <h4>Universitaria</h4>
+                        <span class="casa">DUOC UC</span>
+                        <span class="fecha">2023 - Actualidad</span>
+                        <p></p>
+                        <div class="conectori">
+                            <div class="circuloi"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col derecha">
+                    <h3>Experiencia de trabajo</h3>
+                    <div class="item der">
+                        <h4>Analista Tecnico</h4>
+                        <span class="casa">Bicom Tecnologia</span>
+                        <span class="fecha">2022 - Actualidad</span>
+                        <p></p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION PORTAFOLIO -->
+    <section id="portfolio" class="portfolio">
+        <div class="contenido-seccion">
+            <h2>PORTAFOLIO</h2>
+            <div class="galeria">
+                <div class="proyecto">
+                    <img src="{% static 'principal/img/Pagina1.png' %}" alt="">
+                    <div class="overlay">
+                        <h3>Pagina Web</h3>
+                        <p>HTML y CSS</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="{% static 'principal/img/Dinopagina.png' %}" alt="">
+                    <div class="overlay">
+                        <h3>Dinosaurio</h3>
+                        <p>HTML</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="{% static 'principal/img/paginapokedex.png' %}" alt="">
+                    <div class="overlay">
+                        <h3>Pokedex</h3>
+                        <p>API JS</p>
+                    </div>
+                </div>
+                  
+                
+                
+                
+                
+                
+                
+                
+                <!-- Proyectos dinámicos desde la base de datos -->
+            {% for proyecto in proyectos %}
+            <div class="proyecto">
+                <img src="{{ proyecto.imagen.url }}" alt="{{ proyecto.titulo }}">
+                <div class="overlay">
+                    <h3>{{ proyecto.titulo }}</h3>
+                    <p>{{ proyecto.descripcion }}</p>
+                    <a href="{{ proyecto.link_sitio }}" class="btn btn-primary" target="_blank">Ver Sitio</a>
+                    <a href="{{ proyecto.link_repositorio }}" class="btn btn-secondary" target="_blank">Ver Repositorio</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            <a href="{% url 'proyectos' %}" class="btn-proyectos">Ver Todos los Proyectos</a>
+        </div>
+    </div>
+</section>
+            </div>
+            <div class="text-center">
+                <a href="{% url 'proyectos' %}" class="btn-proyectos">Ver Proyectos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION CONTACTO -->
+    <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <h2>CONTACTO</h2>
+            <div class="fila">
+                <!-- Formulario -->
+                <div class="col">
+                    <form id="formulario-contacto" action="https://formsubmit.co/jossue4pc19@gmail.com" method="POST">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tú Nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Dirección de correo" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="asunto" name="asunto" placeholder="Asunto" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+                        </div>
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario de contacto">
+                        <button type="submit" class="btn-enviar">
+                            Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+                            <span class="overlay"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <a href="#inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="https://www.instagram.com/jossue4pc/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="discordapp.com/users/472891145974972447"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://www.linkedin.com/in/jossue4pc/"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'principal/script.js' %}"></script>
+</body>
+</html>
